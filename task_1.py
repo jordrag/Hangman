@@ -1,7 +1,7 @@
 import random
 answer = []
 
-fail_count = 0
+fail_count = 1
 
 # database of words
 
@@ -11,20 +11,20 @@ words_data = {'animals': ['camel', 'rabbit', 'bear', 'dolphin', 'penguin', 'gira
 
 
 # function for choice
-def choice(choice):
+def choice(ch):
     while True:
-        if choice == 1:
+        if ch == 1:
             key = "animals"
             break
-        elif choice == 2:
+        elif ch == 2:
             key = "plants"
             break
-        elif choice == 3:
+        elif ch == 3:
             key = "cities"
             break
         else:
             print('Make a choice: 1.Animals, 2.Plants, 3.Cities')
-            choice = int(input())
+            ch = int(input())
 
     rnd_number = random.randrange(0, len(words_data[key]))
 
@@ -41,11 +41,11 @@ word = choice(nmr)
 for i in range(len(word)):
     print(" _ ", end="")
     answer.append("_")
+print()
 
 # Comparison of  entered letter vs. letters of random chosen word for this game
 
 while True:
-    print()
     print("Ask a letter from the word: ")
     letter = str(input())
     guessed_right = 0
@@ -57,7 +57,7 @@ while True:
 # Drawing the hangman
 
     if guessed_right != 0:
-        print("".join(answer))
+        print(" ".join(answer))
         if "_" not in answer:
             print("You won!")
             break
