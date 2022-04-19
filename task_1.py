@@ -1,16 +1,19 @@
+import ast
 import random
+
 answer = []
 
 fail_count = 1
 
-# database of words
+# taking data from outsource file
 
-words_data = {'animals': ['camel', 'rabbit', 'bear', 'dolphin', 'penguin', 'giraffe', 'sheep', 'goat', 'cow', 'wolf'],
-              'cities': ['Varna', 'Sofia', 'London', 'Tokyo', 'Moscow', 'Washington', 'Amsterdam', 'New York'],
-              'plants': ['potatoes', 'carrot', 'apple', 'orange']}
+data_file = open("hangman_data.txt", "r")
+content = data_file.read()
+words_data = ast.literal_eval(content)
 
 
 # function for choice
+
 def choice(ch):
     while True:
         if ch == 1:
@@ -54,7 +57,7 @@ while True:
             answer[i] = letter
             guessed_right += 1
 
-# Drawing the hangman
+    # Drawing the hangman
 
     if guessed_right != 0:
         print(" ".join(answer))
@@ -64,6 +67,6 @@ while True:
     else:
         print("*" * fail_count)
         fail_count += 1
-        if fail_count == 7:
+        if fail_count == 8:
             print("Game over! You lose!")
             break
