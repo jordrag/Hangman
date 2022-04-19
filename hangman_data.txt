@@ -1,0 +1,3 @@
+{'animals': ['camel', 'rabbit', 'bear', 'dolphin', 'penguin', 'giraffe', 'sheep', 'goat', 'cow', 'wolf'],
+              'cities': ['Varna', 'Sofia', 'London', 'Tokyo', 'Moscow', 'Washington', 'Amsterdam', 'New York'],
+              'plants': ['potatoes', 'carrot', 'apple', 'orange']}
