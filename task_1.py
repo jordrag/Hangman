@@ -6,11 +6,11 @@ fail_count = 0
 # database of words
 
 words_data = {'animals': ['camel', 'rabbit', 'bear', 'dolphin', 'penguin', 'giraffe', 'sheep', 'goat', 'cow', 'wolf'],
-              'cities': ['Varna', 'Sofia', 'London', 'Tokyo', 'Moscow', 'Washington', 'Amsterdam', 'New York'], \
+              'cities': ['Varna', 'Sofia', 'London', 'Tokyo', 'Moscow', 'Washington', 'Amsterdam', 'New York'],
               'plants': ['potatoes', 'carrot', 'apple', 'orange']}
 
-# function for choice
 
+# function for choice
 def choice(choice):
     while True:
         if choice == 1:
