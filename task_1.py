@@ -1,10 +1,6 @@
 import ast
 import random
 
-answer = []
-
-fail_count = 1
-
 # taking data from outsource file
 
 data_file = open("hangman_data.txt", "r")
@@ -41,12 +37,15 @@ nmr = int(input())
 
 word = choice(nmr)
 
+answer = []
+
 for i in range(len(word)):
     print(" _ ", end="")
     answer.append("_")
 print()
 
 # Comparison of  entered letter vs. letters of random chosen word for this game
+fail_count = 1
 
 while True:
     print("Ask a letter from the word: ")
