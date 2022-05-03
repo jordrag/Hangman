@@ -1,16 +1,17 @@
 import ast
 import random
 
-# taking data from outsource file
-
-data_file = open("hangman_data.txt", "r")
-content = data_file.read()
-words_data = ast.literal_eval(content)
-
-
 # function for choice
 
 def choice(ch):
+    # taking data from outsource file
+
+    data_file = open("hangman_data.txt", "r")
+    content = data_file.read()
+    words_data = ast.literal_eval(content)
+
+    # waiting for choice from player
+
     while True:
         if ch == 1:
             key = "animals"
