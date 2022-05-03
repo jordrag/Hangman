@@ -1,5 +1,6 @@
 import ast
 import random
+answer = []
 
 # function for choice
 
@@ -33,40 +34,46 @@ def choice(ch):
     return word_choice
 
 
-print('Make a choice: 1.Animals, 2.Plants, 3.Cities')
-nmr = int(input())
+class Beginning:
+    # global answer
+    # answer = []
+    print('Make a choice: 1.Animals, 2.Plants, 3.Cities')
+    nmr = int(input())
 
-word = choice(nmr)
+    global word
+    word = choice(nmr)
 
-answer = []
-
-for i in range(len(word)):
-    print(" _ ", end="")
-    answer.append("_")
-print()
-
-# Comparison of  entered letter vs. letters of random chosen word for this game
-fail_count = 1
-
-while True:
-    print("Ask a letter from the word: ")
-    letter = str(input())
-    guessed_right = 0
     for i in range(len(word)):
-        if word[i] == letter:
-            answer[i] = letter
-            guessed_right += 1
+        print(" _ ", end="")
+        answer.append("_")
+    print()
 
-    # Drawing the hangman
 
-    if guessed_right != 0:
-        print(" ".join(answer))
-        if "_" not in answer:
-            print("You won!")
-            break
-    else:
-        print("*" * fail_count)
-        fail_count += 1
-        if fail_count == 8:
-            print("Game over! You lose!")
-            break
+class Comparison:
+    # Comparison of  entered letter vs. letters of random chosen word for this game
+
+    fail_count = 1
+
+    while True:
+        print("Ask a letter from the word: ")
+        letter = str(input())
+        guessed_right = 0
+        for i in range(len(word)):
+            if word[i] == letter:
+                answer[i] = letter
+                guessed_right += 1
+
+        # Drawing the hangman
+
+        if guessed_right != 0:
+            print(" ".join(answer))
+            if "_" not in answer:
+                print("You won!")
+                break
+        else:
+            print("*" * fail_count)
+            fail_count += 1
+            if fail_count == 8:
+                print("Game over! You lose!")
+                break
+
